@@ -1,5 +1,5 @@
 const CONFIG = {
-    addonName: "My Files",
+    addonName: "myfiles",
     premiumizeFolderId: "",
     premiumizeApiKey: "",
     rpdbApiKey: "",
