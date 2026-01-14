@@ -68,12 +68,12 @@ async function folderList(folderId) {
     });
     const res = await fetch(url);
     console.log({
-      ok: response.ok,
-      status: response.status,
-      statusText: response.statusText,
-      url: response.url,
-      redirected: response.redirected,
-      type: response.type
+      ok: res.ok,
+      status: res.status,
+      statusText: res.statusText,
+      url: res.url,
+      redirected: res.redirected,
+      type: res.type
     });
     const json = await res.json();
     return json.content || [];
