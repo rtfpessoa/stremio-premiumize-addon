@@ -293,7 +293,7 @@ async function handleRequest(request) {
         if (catalogMatch) {
             const catalogId = catalogMatch[1];
             console.log("catalogId", catalogId);
-            const rootFolder = await folderList(CONFIG.premiumizeFolderId);
+            const rootFolder = await folderList("");
             console.log("rootFolder", rootFolder);
             const matchedFolder = rootFolder.find(f => `premiumize-${f.name.toLowerCase()}` === catalogId);
             console.log("matchedFolder", matchedFolder);
