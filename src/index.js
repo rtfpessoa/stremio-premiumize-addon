@@ -35,7 +35,7 @@ const API_ENDPOINTS = {
 
 const REGEX_PATTERNS = {
     Stream: /^\/stream\/(movie|series)\/([a-zA-Z0-9:%\-\._]+)\.json$/,
-    Catalog: new RegExp(`^/catalog/${CONFIG.addonName.replace(/ /g, '(?: |%20)')}/(premiumize-\\w+)\\.json$`),
+    Catalog: new RegExp(`^/catalog/${CONFIG.addonName.replace(/ /g, '%20')}/(premiumize-\\w+)\\.json$`),
     Meta: /^\/meta\/(movie|series)\/premiumize-([^\.]+)\.json$/,
 };
 
