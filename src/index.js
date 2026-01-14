@@ -67,6 +67,14 @@ async function folderList(folderId) {
         folderId: folderId || ""
     });
     const res = await fetch(url);
+    console.log({
+      ok: response.ok,
+      status: response.status,
+      statusText: response.statusText,
+      url: response.url,
+      redirected: response.redirected,
+      type: response.type
+    });
     const json = await res.json();
     return json.content || [];
 }
@@ -291,7 +299,6 @@ async function handleRequest(request) {
         // Catalogs
         const catalogMatch = REGEX_PATTERNS.Catalog.exec(url.pathname);
         if (catalogMatch) {
-            console.log("ki", CONFIG.premiumizeApiKey)
             const catalogId = catalogMatch[1];
             console.log("catalogId", catalogId);
             const rootFolder = await folderList("");
