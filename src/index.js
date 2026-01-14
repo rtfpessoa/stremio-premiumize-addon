@@ -292,11 +292,15 @@ async function handleRequest(request) {
         const catalogMatch = REGEX_PATTERNS.Catalog.exec(url.pathname);
         if (catalogMatch) {
             const catalogId = catalogMatch[1];
+            console.log("catalogId", catalogId);
             const rootFolder = await folderList(CONFIG.premiumizeFolderId);
+            console.log("rootFolder", rootFolder);
             const matchedFolder = rootFolder.find(f => `premiumize-${f.name.toLowerCase()}` === catalogId);
+            console.log("matchedFolder", matchedFolder);
 
             if (matchedFolder) {
                 const metas = await getCatalog(matchedFolder.id);
+                console.log("metas", metas);
                 return createJsonResponse({ metas });
             }
         }
