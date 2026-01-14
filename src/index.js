@@ -291,6 +291,7 @@ async function handleRequest(request) {
         // Catalogs
         const catalogMatch = REGEX_PATTERNS.Catalog.exec(url.pathname);
         if (catalogMatch) {
+            console.log("ki", CONFIG.premiumizeApiKey)
             const catalogId = catalogMatch[1];
             console.log("catalogId", catalogId);
             const rootFolder = await folderList("");
